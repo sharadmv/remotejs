@@ -1,0 +1,16 @@
+{
+  "name": "remote.js",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "",
+  "permissions": [
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery.js", "binary.js", "binaryremote.js", "test.js"]
+    }
+  ],
+  "browser_action": {
+  }
+}

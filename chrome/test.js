@@ -1,9 +1,7 @@
-var devices = {
-  remote : {
-    toggle : function(options, callback) {
-      console.log("Toggled!")
-    }
+var driver = {
+  toggle : function(options, callback) {
+    console.log("Toggled!")
+    callback({});
   }
 }
-window.blah = new Message(Types.REGISTRATION, {});
-var br = new BinaryRemote("remote","localhost",  9000, devices);
+var br = new BinaryRemote("remote","localhost",  9000, driver);

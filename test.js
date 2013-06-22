@@ -7,7 +7,10 @@ var remote = new Devices.Device("remote", chrome);
 var drivers = {
   test : {
     tap : function(options, callback) {
-      callback({});
+      console.log("Tapped");
+      callback({
+          message : "sid is awesome"
+      });
     }
   }
 }
@@ -15,16 +18,13 @@ var drivers = {
 var server = new Devices.Driver.TCP(drivers);
 server.listen(8080);
 
-var client = new Devices.Client.TCP('localhost', 8080, function(results){
+//var client = new Devices.Client.TCP('10.0.0.10', 8080, function(results){
 
-});
-var tapper = new Devices.Device("test", client);
+//});
+//var tapper = new Devices.Device("awesome", client);
 
-setInterval(function() {
-    tapper.action('tap', {}, function() {
-      //console.log('tapped');
-    });
-    remote.action('toggle', {}, function() {
-      console.log('toggled');
-    });
-}, 1000);
+//setInterval(function() {
+    //tapper.action('print', {}, function() {
+      //console.log('Printed');
+    //});
+//}, 1000);

@@ -7,7 +7,7 @@ var remote = new Devices.Device("remote", chrome);
 var drivers = {
   test : {
     tap : function(options, callback) {
-        callback({});
+      callback({});
     }
   }
 }
@@ -22,7 +22,7 @@ var tapper = new Devices.Device("test", client);
 
 setInterval(function() {
     tapper.action('tap', {}, function() {
-      console.log('tapped');
+      //console.log('tapped');
     });
     remote.action('toggle', {}, function() {
       console.log('toggled');
